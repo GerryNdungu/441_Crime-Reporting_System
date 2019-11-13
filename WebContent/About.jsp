@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import ="java.sql.*" %>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +57,7 @@
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item active">
-           <a class="nav-link" href="OB.jsp">View Cases</a>
+           	<a class="nav-link" href="OB.jsp">View Cases</a>
     		</li>
     		<li class="nav-item">
     		  <a class="nav-link" href="ReportCase.jsp">Report Cases</a>
@@ -77,6 +75,16 @@
     <div class="container">
       <div class="row">
         <div class="span12">
+          <h2><strong><span class="highlight primary">Security Department</span></strong></h2>
+          <p class="lead">
+            The department of security is a 24 hour, 365 - day service oriented department with the 
+            mission of providing a safe and secure environment to
+             all members of the University community.</p>
+          <ul class="list list-ok strong bigger">
+            <li>Security for all members of the university and neighbouring community </li>
+            <li>Reliable and effective service for our students and staff</li>
+        
+          </ul>
 
         </div>
        
@@ -86,83 +94,7 @@
     </div>
 
   </section>
-    <h2 class="text-center"><strong><span class="highlight primary">Cases Submitted</span></strong></h2>
-  
- <!-- To display table with contents --> 
-<div class="row">
-		<div class="col-lg-2">
-		</div>
-				<div class="col-lg-10">
-					<div class="col-lg-10">
-			          			<table class="table table-hover">
-								  <thead class="thead-dark">
-								    <tr>
-								      <th scope="col">#</th>
-								      <th scope="col">Case Category</th>
-								      <th scope="col">Name</th>
-								      <th scope="col">StaffID/RegNo</th>
-								      <th scope="col">Date</th>
-								      <th scope="col">Time</th>
-								      <th scope="col">Place</th>
-								      <th scope="col">Description</th>
-								      <th scope="col">Time Reported</th>
-								    </tr>
-								  </thead>
-		<!-- To fetch cases from DB -->						  
-					<%
-					 try{
-						 
-						 String url="jdbc:mysql://localhost:3306/";
-							String username="root";
-							String password="";
-							
-							
-							Connection conn=null;
-							Statement stmt=null;
-							ResultSet res=null;
-							
-							Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-							 conn=DriverManager.getConnection(url,username,password);
-							stmt=conn.createStatement();
 
-							String	data="SELECT * from complains ";
-								
-							
-							
-							res=stmt.executeQuery(data);
-							
-							while(res.next()==true ){
-						 
-					 
-					 
-					  %>
-							 <tbody>
-								    <tr>
-								    <td><%=res.getString(1) %></td>
-								   	<td><%=res.getString(2) %></td>
-								   	<td><%=res.getString(3) %></td>
-								    <td><%=res.getString(4) %></td>
-								    <td><%=res.getString(5) %></td>
-								    <td><%=res.getString(6) %></td>
-								    <td><%=res.getString(7) %></td>
-								    <td><%=res.getString(8) %></td>
-								    <td><%=res.getString(9) %></td>
-							
-								    </tr>
-								 </tbody>
-								  <%
-						}
-						}catch(Exception ex){
-							%>
-							<p><kbd>Error loading results!!</kbd></p>
-						<%}finally{
-							
-						}
-					  
-					  %> 
-							</table>
-				</div>
-			</div>
 	
 </div>	
 <script>window.onscroll = function() {scrollFunction()};

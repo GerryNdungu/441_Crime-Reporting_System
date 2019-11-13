@@ -39,16 +39,16 @@
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   		<ul class="navbar-nav">
     		<li class="nav-item active">
-     		 	<a class="nav-link" href="OB.jsp">Occurrence Book</a>
+     		 	<a class="nav-link" href="OB.jsp">View Cases</a>
     		</li>
     		<li class="nav-item">
-    		  <a class="nav-link" href="#">Report Cases</a>
+    		  <a class="nav-link" href="ReportCase.jsp">Report Cases</a>
    			 </li>
     		<li class="nav-item">
-    		  <a class="nav-link" href="#">Link</a>
+    		  <a class="nav-link" href="About.jsp">About</a>
     		</li>
     		<li class="nav-item">
-      			<a class="nav-link disabled" href="#">Disabled</a>
+      			<a class="nav-link" href="#">Contact</a>
     		</li>
   		</ul>
 		</nav>
