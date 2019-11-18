@@ -16,7 +16,7 @@
 	
 
 </head>
-<body style="background: url(assets/egertongtjpg.jpg)">
+<body style="background: url(assets/Gate.jpg);background-repeat: no-repeat" >
 <div class="container-full">
 <div class="header">
 	<header>

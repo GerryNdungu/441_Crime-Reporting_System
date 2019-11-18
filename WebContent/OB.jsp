@@ -18,26 +18,6 @@
 	
 
 </head>
-<style>
-	.d-flex{
-		margin-top :400px;
-	}
-	.my-flex-container{
-		border:2px solid green;
-		height: 100px;
-		margin-bottom: 20px;
-	}
-	.my-flex-container-column{
-		border:2px solid green;
-		height: 100px;
-		margin-bottom: 20px;
-	}	
-	.my-flex-item{
-		border:2px solid green;
-		height: 100px;
-		background-color: lightgrey;		
-	}
-</style>
 <body>
 <div class="container-full">
 <div class="header">
@@ -63,6 +43,9 @@
     		</li>
     		<li class="nav-item">
     		  <a class="nav-link" href="ReportCase.jsp">Report Cases</a>
+   			 </li>
+   			 <li class="nav-item">
+    		  <a class="nav-link" href="AddGuard.jsp">Add Guard</a>
    			 </li>
     		<li class="nav-item">
     		  <a class="nav-link" href="About.jsp">About</a>

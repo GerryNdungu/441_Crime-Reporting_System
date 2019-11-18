@@ -62,6 +62,9 @@
     		<li class="nav-item">
     		  <a class="nav-link" href="ReportCase.jsp">Report Cases</a>
    			 </li>
+   			 <li class="nav-item">
+    		  <a class="nav-link" href="AddGuard.jsp">Add Guard</a>
+   			 </li>
     		<li class="nav-item">
     		  <a class="nav-link" href="About.jsp">About</a>
     		</li>
