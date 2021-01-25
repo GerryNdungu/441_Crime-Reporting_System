@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Report Form</title>
+<title>Guards list</title>
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -37,23 +37,45 @@
 
     <div class="container">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-           <a class="nav-link" href="OB.jsp">View Cases</a>
-    		</li>
-    		<li class="nav-item">
-    		  <a class="nav-link" href="ReportCase.jsp">Report Cases</a>
-   			 </li>
-   			 <li class="nav-item">
-    		  <a class="nav-link" href="AddGuard.jsp">Add Guard</a>
-   			 </li>
-    		<li class="nav-item">
-    		  <a class="nav-link" href="About.jsp">About</a>
-    		</li>
-    		<li class="nav-item">
-      			<a class="nav-link" href="#">Contact</a>
-    </li>
-  </ul>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+	  		<ul class="navbar-nav">
+	    		<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Cases
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          <a class="dropdown-item" href="OB.jsp">View Cases</a>
+			          <a class="dropdown-item" href="ReportCase.jsp">Report a Case</a>
+			        </div>
+			      </li>
+	
+	   			 <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Guards
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          <a class="dropdown-item" href="Guards.jsp">List of Guards</a>
+			          <a class="dropdown-item" href="AddGuard.jsp">Add New Guard</a>
+			        </div>
+			      </li>	
+	    		<li class="nav-item">
+	    		  <a class="nav-link" href="About.jsp">About</a>
+	    		</li>
+	    		<li class="nav-item">
+			      			<a class="nav-link" href="#">Contact</a>
+			    </li>
+			 </ul>
+  		</div>
+  			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+		        <ul class="navbar-nav ml-auto">
+		        
+		            <li class="nav-item">
+		            	<i class="fas fa-power-off"></i>
+		                <a class="nav-link" href="login.jsp">Logout</a>
+		            </li>
+
+		        </ul>
+    </div>
 </nav>
 <section>
 
@@ -69,7 +91,7 @@
     </div>
 
   </section>
-    <h2 class="text-center"><strong><span class="highlight primary">Cases Submitted</span></strong></h2>
+    <h2 class="text-center"><strong><span class="highlight primary">List of Guards</span></strong></h2>
   
  <!-- To display table with contents --> 
 <div class="row">
@@ -81,14 +103,10 @@
 								  <thead class="thead-dark">
 								    <tr>
 								      <th scope="col">#</th>
-								      <th scope="col">Case Category</th>
-								      <th scope="col">Name</th>
-								      <th scope="col">StaffID/RegNo</th>
-								      <th scope="col">Date</th>
-								      <th scope="col">Time</th>
-								      <th scope="col">Place</th>
-								      <th scope="col">Description</th>
-								      <th scope="col">Time Reported</th>
+								      <th scope="col">Staff ID.</th>
+								      <th scope="col">First Name</th>
+								      <th scope="col">Last Name</th>
+								      <th scope="col">Phone No.</th>
 								    </tr>
 								  </thead>
 		<!-- To fetch cases from DB -->						  
@@ -108,7 +126,7 @@
 							 conn=DriverManager.getConnection(url,username,password);
 							stmt=conn.createStatement();
 
-							String	data="SELECT * from complains ";
+							String	data="SELECT * from guards ";
 								
 							
 							
@@ -126,11 +144,6 @@
 								   	<td><%=res.getString(3) %></td>
 								    <td><%=res.getString(4) %></td>
 								    <td><%=res.getString(5) %></td>
-								    <td><%=res.getString(6) %></td>
-								    <td><%=res.getString(7) %></td>
-								    <td><%=res.getString(8) %></td>
-								    <td><%=res.getString(9) %></td>
-							
 								    </tr>
 								 </tbody>
 								  <%
@@ -148,6 +161,7 @@
 			</div>
 	
 </div>	
+</div>
 <script>window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
